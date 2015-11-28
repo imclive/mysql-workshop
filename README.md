@@ -8,7 +8,10 @@ use vagrant setup 4 virtualbox vm, it will take a time to provision : main, node
  - node0 = 192.168.56.10
  - node1 = 192.168.56.11
  - node2 = 192.168.56.12
+
+```sh
 vagrant up
+```
 
 when all vm ready
 ### vagrant ssh node0
