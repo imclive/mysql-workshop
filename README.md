@@ -4,7 +4,7 @@ git clone https://github.com/imclive/mysql-workshop.git
 - cd mysql-workshop
 
 use vagrant setup 4 virtualbox vm, it will take a time to provision : main, node0, node1, node2
- - main = 192.168.50.15
+ - main = 192.168.56.15
  - node0 = 192.168.56.10
  - node1 = 192.168.56.11
  - node2 = 192.168.56.12
