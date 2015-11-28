@@ -1,6 +1,7 @@
 # mysql-workshop
 git clone https://github.com/imclive/mysql-workshop.git
-cd mysql-workshop
+
+- cd mysql-workshop
 
 use vagrant setup 4 virtualbox vm, it will take a time to provision : main, node0, node1, node2
  - main = 192.168.50.15
@@ -54,6 +55,7 @@ sudo systemctl start mysql
 ### return to node0 -> vagrant ssh node0
 ```sh
 sudo systemctl restart mysql
+```
 
 ### vagrant ssh main
 ```sh
