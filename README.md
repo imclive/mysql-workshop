@@ -70,4 +70,6 @@ sudo systemctl start keepalive
 ```
 
 
-
+### References
+1. <http://www.server-world.info/en/note?os=CentOS_7&p=mariadb&f=4>
+2. <http://www.fromdual.com/making-haproxy-high-available-for-mysql-galera-cluster>
