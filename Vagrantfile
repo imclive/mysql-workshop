@@ -18,16 +18,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         end
 		
         node.vm.provision "hosts" do |hosts|			
-            hosts.add_host '192.168.56.15', ['dindin.com', 'main']
-			hosts.add_host '192.168.56.10', ['dindin.com', 'node0']
-			hosts.add_host '192.168.56.11', ['dindin.com', 'node1']
-			hosts.add_host '192.168.56.12', ['dindin.com', 'node2']
+        	hosts.add_host '192.168.56.15', ['main.dindin.com', 'main']
+		hosts.add_host '192.168.56.10', ['node0.dindin.com', 'node0']
+		hosts.add_host '192.168.56.11', ['node1.dindin.com', 'node1']
+		hosts.add_host '192.168.56.12', ['node2.dindin.com', 'node2']
         end		
 		
         node.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--memory", "1024"]
         end
-		node.vm.provision "shell", path: "provision/update.sh"
+	node.vm.provision "shell", path: "provision/update.sh"
     end
 	
     config.vm.define "node0" do |node|
@@ -37,22 +37,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 		
 		node.vm.network "private_network", ip: "192.168.56.10"		
         node.vm.provision "hosts" do |hosts|
-            hosts.add_host '192.168.56.15', ['dindin.com', 'main']
-			hosts.add_host '192.168.56.10', ['dindin.com', 'node0']
-			hosts.add_host '192.168.56.11', ['dindin.com', 'node1']
-			hosts.add_host '192.168.56.12', ['dindin.com', 'node2']
+        	hosts.add_host '192.168.56.15', ['main.dindin.com', 'main']
+		hosts.add_host '192.168.56.10', ['node0.dindin.com', 'node0']
+		hosts.add_host '192.168.56.11', ['node1.dindin.com', 'node1']
+		hosts.add_host '192.168.56.12', ['node2.dindin.com', 'node2']
         end		
 		
         node.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--memory", "1024"]
         end
 		
-        #node.vm.provision "shell", path: "provision/setup-docker-tools.sh"
         node.vm.provision "shell", path: "provision/setup-env.sh"
-		# config.vm.provision "shell", inline: <<-SHELL
-		#   sudo apt-get update
-		#   sudo apt-get install -y apache2
-		# SHELL
     end
 
 
@@ -63,16 +58,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
         node.vm.network "private_network", ip: "192.168.56.11"
         node.vm.provision "hosts" do |hosts|
-            hosts.add_host '192.168.56.15', ['dindin.com', 'main']
-			hosts.add_host '192.168.56.10', ['dindin.com', 'node0']
-			hosts.add_host '192.168.56.11', ['dindin.com', 'node1']
-			hosts.add_host '192.168.56.12', ['dindin.com', 'node2']
+        	hosts.add_host '192.168.56.15', ['main.dindin.com', 'main']
+		hosts.add_host '192.168.56.10', ['node0.dindin.com', 'node0']
+		hosts.add_host '192.168.56.11', ['node1.dindin.com', 'node1']
+		hosts.add_host '192.168.56.12', ['node2.dindin.com', 'node2']
         end		
 		
         node.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--memory", "1024"]
         end
-		node.vm.provision "shell", path: "provision/setup-env.sh"
+	node.vm.provision "shell", path: "provision/setup-env.sh"
     end
 
 
@@ -82,16 +77,16 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
         node.vm.network "private_network", ip: "192.168.56.12"
         node.vm.provision "hosts" do |hosts|
-            hosts.add_host '192.168.56.15', ['dindin.com', 'main']
-			hosts.add_host '192.168.56.10', ['dindin.com', 'node0']
-			hosts.add_host '192.168.56.11', ['dindin.com', 'node1']
-			hosts.add_host '192.168.56.12', ['dindin.com', 'node2']
+        	hosts.add_host '192.168.56.15', ['main.dindin.com', 'main']
+		hosts.add_host '192.168.56.10', ['node0.dindin.com', 'node0']
+		hosts.add_host '192.168.56.11', ['node1.dindin.com', 'node1']
+		hosts.add_host '192.168.56.12', ['node2.dindin.com', 'node2']
         end		
 		
         node.vm.provider "virtualbox" do |vb|
             vb.customize ["modifyvm", :id, "--memory", "1024"]
         end
-		node.vm.provision "shell", path: "provision/setup-env.sh"
+	node.vm.provision "shell", path: "provision/setup-env.sh"
     end
 
 
